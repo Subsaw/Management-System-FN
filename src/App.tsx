@@ -1,11 +1,7 @@
 import './app.scss';
 
 function App() {
-  return (
-    <div>
-      <p>Hello World</p>
-    </div>
-  );
+  return <div>Hello World</div>;
 }
 
 export default App;
