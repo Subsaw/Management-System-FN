@@ -18,7 +18,12 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+      "endOfLine": "auto"
+      }
+    ],
     "@typescript-eslint/no-non-null-assertion": 0,
     "react/react-in-jsx-scope": 0,
     "arrow-body-style": ["error", "as-needed"],
