@@ -1,4 +1,20 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/bash
 
+# Capture the exit code of the ESLint command
+lint_exit_code=$?
+
+# Run the npm run format command to format the code
+echo "Running code checker..."
 npm run format
+
+# Add the formatted changes to the staging area
+git add .
+
+# If there were no changes to add, this means the code was already formatted, so we don't need to commit again.
+if [ -z "$(git status --porcelain)" ]; then
+  echo "Code is already formatted. Skipping commit."
+  exit 0
+fi
+
+# Exit with the same status as the ESLint check
+exit $lint_exit_code
