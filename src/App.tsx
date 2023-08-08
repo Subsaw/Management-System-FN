@@ -1,7 +1,8 @@
 import './app.scss';
+import Dashboard from './dashboard/Dashboard';
 
 function App() {
-  return <div>Hello World</div>;
+  return <Dashboard />;
 }
 
 export default App;
